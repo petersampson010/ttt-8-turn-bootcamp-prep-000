@@ -28,10 +28,10 @@ end
 
 def win?(board)
   if (((board[0] && board[4] && board[8]) || (board[0] && board[1] && board[2]) || (board[0] && board[3] && board[6]) || (board[1] && board[4] && board[7]) || (board[2] && board[5] && board[8]) || (board[3] && board[4] && board[5]) || (board[6] && board[7] && board[8])) == "X") || (((board[0] && board[4] && board[8]) || (board[0] && board[1] && board[2]) || (board[0] && board[3] && board[6]) || (board[1] && board[4] && board[7]) || (board[2] && board[5] && board[8]) || (board[3] && board[4] && board[5]) || (board[6] && board[7] && board[8])) == "O")
-    return true
+    return false 
     puts "You Win!"
   else 
-    return false 
+    return true 
   end
 end 
 
