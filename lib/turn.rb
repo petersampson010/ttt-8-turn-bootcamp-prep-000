@@ -36,7 +36,6 @@ def win?(board)
 end 
 
 def turn(board)
-  if win?(board)
     puts "Please enter 1-9:"
     users_input = gets.strip
     index_number = input_to_index(users_input)
@@ -45,7 +44,6 @@ def turn(board)
       display_board(board)
     else 
       turn(board)
-    end 
   end 
 end 
 
