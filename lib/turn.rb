@@ -33,16 +33,15 @@ def win(board)
     
 
 def turn(board)
-  puts "Please enter 1-9:"
-  users_input = gets.strip
-  index_number = input_to_index(users_input)
-  if valid_move?(board, index_number)
-    move(board, index_number, character = "X")
-    display_board(board)
-  else 
-    turn(board)
-  end 
-end 
+  loop do 
+    puts "Please enter 1-9:"
+    users_input = gets.strip
+    index_number = input_to_index(users_input)
+    if valid_move?(board, index_number)
+      move(board, index_number, character = "X")
+      display_board(board)
+      else 
+        turn(board)
 
 def move(board, index_number, character = "X")
   return board[index_number] = character
