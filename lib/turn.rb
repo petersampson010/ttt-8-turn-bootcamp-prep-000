@@ -26,22 +26,29 @@ def input_to_index(users_input)
   users_input.to_i - 1
 end
 
-def win(board)
+def win?(board)
   if (((board[0] && board[4] && board[8]) || (board[0] && board[1] && board[2]) || (board[0] && board[3] && board[6]) || (board[1] && board[4] && board[7]) || (board[2] && board[5] && board[8]) || (board[3] && board[4] && board[5]) || (board[6] && board[7] && board[8])) == "X") || (((board[0] && board[4] && board[8]) || (board[0] && board[1] && board[2]) || (board[0] && board[3] && board[6]) || (board[1] && board[4] && board[7]) || (board[2] && board[5] && board[8]) || (board[3] && board[4] && board[5]) || (board[6] && board[7] && board[8])) == "O")
+    return true
     puts "You Win!"
+  else 
+    return false 
   end
-    
+end 
 
 def turn(board)
-  loop do 
+  if win?(board)
     puts "Please enter 1-9:"
     users_input = gets.strip
     index_number = input_to_index(users_input)
     if valid_move?(board, index_number)
       move(board, index_number, character = "X")
       display_board(board)
-      else 
-        turn(board)
+    else 
+      turn(board)
+    end 
+  end 
+end 
+
 
 def move(board, index_number, character = "X")
   return board[index_number] = character
