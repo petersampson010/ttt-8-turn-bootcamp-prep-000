@@ -33,9 +33,10 @@ def turn(board)
   answer = gets.strip
   answer = input_to_index(answer)
   if valid_move?(board, answer)
-    move()
+    move(board, answer)
+    puts display_board(board)
   else 
-    move(board, index_number, character = "X")
+    
   end 
 end 
 
