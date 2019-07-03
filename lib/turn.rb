@@ -23,7 +23,7 @@ def display_board(board)
 end
 
 def input_to_index(users_input)
-  index_number = (users_input.to_i - 1)
+  users_input.to_i - 1
 end
 
 def turn(board)
